@@ -1,0 +1,36 @@
+.container{
+    margin-top: 50px;
+}
+.money_project{
+    list-style-type: none;
+}
+.money_project li {
+    display: flex;
+    justify-content:flex-start;
+}
+.money_project li p{
+flex:0 0 50%;
+text-align: left;
+width:100%;
+color:aliceblue;
+font-weight: 500;
+}
+.rounded-circle{
+    width:30%;
+}
+.alert-primary{
+    color:rgb(54, 55, 55);
+    font-weight: 600;
+    margin-top:5px;
+}
+.name{
+    color:azure;
+}
+.team{
+    color:aliceblue;
+}
+.list-group{
+    margin-top:-12px;
+}
+
+

@@ -1,0 +1,28 @@
+
+<div class="wrapper">
+<div class="inner">
+    <div class="image-holder">
+        <img src="/assets/images/hinhanhdep.jpg" alt="">
+    </div>
+    <form>
+        <h3>THÔNG TIN CÁ NHÂN</h3>
+        <div class="form-row">
+            <input type="text" class="form-control" id="name" placeholder="Name" value="👨🏻‍💻  Tên Tài Khoản: {{user.name}}">
+            <input type="text" class="form-control" placeholder="Mail" value="✉️  Email: {{user.email}}">
+        </div>
+        <div class="form-row">
+            <input type="text" class="form-control" placeholder="Phone" value="📠  Số Điện Thoại: {{user.sdt}}">
+            <input type="text" class="form-control" placeholder="Phone" value="🗺️  Địa Chỉ: {{user.khuvuc}}">
+        </div>
+        <textarea name="" id="" placeholder="Message" class="form-control" style="height: 130px;"></textarea>
+        </form>
+        </div>
+        
+        <!-- <div>
+            <button (click)="idUser(user.id)">Task Của Tôi</button>
+        </div> -->
+        </div>
+<app-taskcuatoi [iduser]="userid"></app-taskcuatoi>
+       
+      
+
