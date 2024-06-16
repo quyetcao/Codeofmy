@@ -4,10 +4,12 @@ import { DuanApiService } from '../api/duan/duan-api.service';
 import { Duan } from '../interface/duan';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { jwtDecode } from "jwt-decode";
+import { DetailqlduanComponent } from '../detailqlduan/detailqlduan.component';
+
 @Component({
   selector: 'app-quanlyduan',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,DetailqlduanComponent],
   templateUrl: './quanlyduan.component.html',
   styleUrl: './quanlyduan.component.css'
 })
@@ -16,6 +18,7 @@ export class QuanlyduanComponent implements OnInit {
   idofUser: any;
   token:any;
   tokenPayload:any;
+  listduanofleader:any;
   ngOnInit(): void {
 
     if (localStorage.getItem('token')) {
@@ -29,10 +32,20 @@ export class QuanlyduanComponent implements OnInit {
       } 
     }
 
-    this.DuanSrv.getduanofleader(this.idofUser).subscribe((data)=>{
+    this.DuanSrv.getduanofleader(this.idofUser).subscribe((data:any)=>{
       console.log(data);  
+      this.listduanofleader=data.data.rows;
+      console.log(this.listduanofleader);
     })
   }
+///
+id_du_an:any='';
+showduan(id1:any){
+ this.id_du_an=id1;
+}
+
+
+
 }
 
 

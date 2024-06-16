@@ -21,8 +21,8 @@
         <td>{{item.nhan_vien_id}}</td>
         <td>{{item.mota}}</td>
         <td>{{item.tinh_trang}}</td>
-        <td><button type="button" class="btn btn-danger">Delete</button>&nbsp;
-          <button type="button" class="btn btn-warning">Edit</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="xoatask(item.id)">Delete</button>&nbsp;
+          <button type="button" class="btn btn-warning" routerLink="/edittask/{{item.id}}">Edit</button></td>
       </tr>
     </tbody>
 </table>

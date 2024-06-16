@@ -4,22 +4,26 @@
     <div class="circle2">
     </div>
     <div class="form">
+        <div class="alert alert-danger" *ngIf="err" role="alert">
+            <img src="/assets/images/angry.gif" width="40px" alt="">
+           Đăng Nhập Không Thành Công!
+          </div>
         <form #formlogin="ngForm" (ngSubmit)="onSubmit(formlogin)">
             <h2 class="title">LOGIN HERE</h2>
             <div>
            <label for="email">Email</label>
-           <input type="text" name="email" ngModel id="email">
+           <input type="text" name="email" ngModel required  #email="ngModel" email id="email">
+           <span *ngIf="!email?.valid && (email?.dirty||email?.touched)"> Email Không hợp lệ </span>
         </div>
         <div>
             <label for="password">Password</label>
             <input type="password" name="password" ngModel id="password">
         </div>
         <button type="submit">Log In</button>
-        <div class="social">
-          <div class="go"><i class="fab fa-google"></i>  Google</div>
-          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-        </div>
-           
         </form>
     </div>
 </div>
+
+<!-- !email?.valid: Email không hợp lệ (valid là false).
+email?.dirty: Field email đã được thay đổi.
+email?.touched: Field email đã được tương tác, ví dụ như đã được click vào. -->

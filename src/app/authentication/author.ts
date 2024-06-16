@@ -16,7 +16,7 @@ export const canActivateAuthor: CanActivateFn = (
     tokenPayload = jwtDecode(token);
     }
     if (!tokenPayload.role === role) {
-        Inject(Router).navigate(['/login']);
+        // Inject(Router).navigate(['/login']);
     return false;
     }
     return true;

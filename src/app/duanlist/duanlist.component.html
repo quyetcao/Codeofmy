@@ -16,8 +16,7 @@
           <th scope="col">Action</th>
         </tr>
       </thead>
-      <div *ngIf="duan">
-        <tbody  *ngFor="let item of duan | paginate: { itemsPerPage: 1, currentPage: 1 } , let i = index " >
+        <tbody  *ngFor="let item of duan , let i = index " >
           <tr>
             <th scope="row">{{i + 1}}</th>
             <td>{{item.ten_du_an}}</td>
@@ -27,7 +26,6 @@
               <button type="button" class="btn btn-warning" routerLink="/editduan/{{item.id}}">Edit</button></td>
           </tr>
         </tbody>
-      </div>
       
   </table>
   

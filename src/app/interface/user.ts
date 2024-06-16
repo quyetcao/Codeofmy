@@ -7,4 +7,5 @@ export interface User{
     role?:number,
     avatar?:string,
     password ?:string,
+    status ?:number,
     }

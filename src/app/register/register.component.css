@@ -287,3 +287,10 @@
   
     .form-title {
       text-align: center; } 
+      span{
+        color: rgb(154, 4, 4);
+      }
+      .alert{
+        width: 60%;
+        margin: auto;
+      }

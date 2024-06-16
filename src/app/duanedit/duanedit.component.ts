@@ -33,7 +33,7 @@ export class DuaneditComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.duansrv.getOne(this.id).subscribe((response: any) => {
-      this.duan = response.data as Duan;
+      this.duan = response.data.rows[0] as Duan;
       console.log(this.duan);
     }
     )

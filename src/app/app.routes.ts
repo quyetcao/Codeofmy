@@ -13,14 +13,16 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { canActivateTeam } from './authentication/auth';
 import { TkcanhanComponent } from './tkcanhan/tkcanhan.component';
+import { EdituserComponent } from './edituser/edituser.component';
+import { canActivateAuthor } from './authentication/author';
 
 
 
 export const routes: Routes = [
     {path:'home', component:HomeComponent},
-    {path:'quanlychung',component:QuanlyduanComponent},
+    {path:'quanlychung', canActivate:[canActivateTeam],data:{role:1},component:QuanlyduanComponent},
     //duan
-    {path:'listduan', component:DuanlistComponent,canActivate:[canActivateTeam],data:{role:1}, children:[]},
+    {path:'listduan', component:DuanlistComponent,canActivate:[canActivateTeam,canActivateAuthor],data:{role:1}, children:[]},
     {path:'createduan', component:DuancreateComponent},
     {path:'editduan/:id', component:DuaneditComponent},
     //task
@@ -28,7 +30,8 @@ export const routes: Routes = [
     {path:'createtask', component:TaskCreateComponent},
     {path:'edittask/:id', component:TaskEditComponent},
     //user
-    {path:'listnv', component:NvListComponent},
+    {path:'listnv',canActivate:[canActivateTeam], component:NvListComponent},
+    {path:'edit/:id', component:EdituserComponent},
     //,canActivate: [canActivateTeam]danh cho tk
     {path:'tkcanhan',component:TkcanhanComponent,canActivate: [canActivateTeam]},
 

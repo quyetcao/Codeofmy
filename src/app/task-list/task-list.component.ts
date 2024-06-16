@@ -35,4 +35,11 @@ export class TaskListComponent {
       this.err=error;
     })
   }
+
+  xoatask(id:any){
+    this.tasksrv.delete(id).subscribe((dataxoa:any)=>{
+console.log(dataxoa);
+this.loadListTask();
+    })
+  }
 }

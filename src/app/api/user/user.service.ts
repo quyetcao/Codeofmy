@@ -14,11 +14,17 @@ export class UserService {
   createUser(user: User) {
     return this.httpServiceUser.post(this.url, user);
   }
+  editUser(user: User, id: any) {
+    return this.httpServiceUser.put(this.url + id, user);
+  }
   login(datalogin:any){
     return this.httpServiceUser.post(this.url+'/login', datalogin);
   }
   delete(id: any) {
     return this.httpServiceUser.delete(this.url + id);
+  }
+  getoneuser(id:any){
+    return this.httpServiceUser.get(this.url+id);
   }
 }
 

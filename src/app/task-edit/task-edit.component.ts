@@ -33,9 +33,12 @@ constructor(private route1: ActivatedRoute,
             err:any;
             id:any;
   ngOnInit(): void {
+  
       this.id=this.route1.snapshot.params['id'];
+      console.log(this.id);
       this.taskSrv.getOne(this.id).subscribe((dataTask:any)=>{
              this.task=dataTask.data;
+             console.log(this.task);
       })
 
       this.UserSrv.getAll().subscribe((data1:any)=>{
@@ -57,7 +60,7 @@ constructor(private route1: ActivatedRoute,
        })
        setTimeout(()=>{
       this.route.navigate(['/listtask'])
-       },4000)
+       },2000)
       },(error)=>{
         this.err=error;
       })

@@ -12,7 +12,7 @@ export class TaskApiService {
     return this.httpServiceTask.get(this.url);
   }
   getOne(id:any){
-    return this.httpServiceTask.get(this.url+id);
+    return this.httpServiceTask.get(this.url+'/id/'+id);
   }
   getTaskofUser(iduser:any){
     return this.httpServiceTask.get(this.url + iduser);

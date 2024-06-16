@@ -7,6 +7,7 @@ import {faCoffee, faList, faUser, faFileLines, faGear, faDatabase, faBorderAll, 
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { CommonModule } from '@angular/common';
 import { jwtDecode } from "jwt-decode";
+import { Location } from '@angular/common';
 
 
 //import các component cố định
@@ -21,6 +22,7 @@ import { DuancreateComponent } from './duancreate/duancreate.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit, OnChanges,DoCheck {
+  constructor(private location: Location){}
   tokenPayload:any;
   token:any;
   iduserTQ:any;
@@ -70,7 +72,10 @@ this.token=localStorage.getItem('token');
 
   }
   // truyền dữ liệu 
-
+dangxuat(){
+  localStorage.removeItem('token');
+  this.location.back();
+}
  
  
 

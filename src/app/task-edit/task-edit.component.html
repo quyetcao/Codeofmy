@@ -3,7 +3,7 @@
     <div class="alert alert-info" role="alert">
       SỬA TASK
     </div>
-    <span class="loader"></span>
+    <!-- <span class="loader"></span> -->
     <form (ngSubmit)="onSubmit()" #taskEdit="ngForm" >
       <div class="mb-3">
         <label for="tentask" class="form-label">Tên task</label>
@@ -27,6 +27,7 @@
       <div class="mb-3">
         <label for="tinhtrang" class="form-label">Tình Trạng </label>
         <input type="text" class="form-control" [(ngModel)]="task.tinh_trang" name="tinh_trang" id="tinhtrang">
+        <span>0:Off - 1: Đang XL</span>
       </div>
       <div class="mb-3">
         <label for="priority" class="form-label">Priority</label>

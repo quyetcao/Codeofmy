@@ -1,20 +1,27 @@
 
 <div class="main">
+    <div class="alert alert-danger" *ngIf="err"  role="alert">
+        <img src="/assets/images/angry.gif" width="40px" alt="">
+       Tài Khoản hoặc Mật khẩu đã bị trùng lặp!
+      </div>
   <div class="signin-content">
   <div class="signup-form">
       <h2 class="form-title">Sign up</h2>
       <form  class="register-form" id="formAddUser" #formregister="ngForm" (ngSubmit)="onSubmit(formregister)">
           <div class="form-group">
               <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-              <input type="text" name="name" id="name" ngModel placeholder="Your Name"/>
+              <input type="text" name="name" id="name" required  #name="ngModel" ngModel placeholder="Your Name"/>
+              <span *ngIf="!name?.valid && (name?.dirty||name?.touched)"> Tên Không hợp lệ </span>
           </div>
           <div class="form-group">
               <label for="email"><i class="zmdi zmdi-email"></i></label>
-              <input type="text" name="email" id="email" ngModel placeholder="Your Email"/>
+              <input type="text" name="email" id="email" required email #email="ngModel"  #name="ngModel" ngModel placeholder="Your Email"/>
+              <span *ngIf="!email?.valid && (email?.dirty||email?.touched)"> Email Không hợp lệ </span>
           </div>
           <div class="form-group">
               <label for="phone"><i class="zmdi zmdi-lock"></i></label>
-              <input type="text" name="sdt" id="phone" ngModel placeholder="Phone"/>
+              <input type="text" name="sdt" id="phone" ngModel required #std="ngModel" pattern="[0-9]{10}" placeholder="Phone"/>
+              <span *ngIf="!std?.valid && (std?.dirty||std?.touched)"> SDT Không hợp lệ </span>
           </div>
           <div class="form-group">
           <label for="diachi"><i class="zmdi zmdi-email"></i></label>
@@ -22,7 +29,8 @@
       </div>
           <div class="form-group">
               <label for="password"><i class="zmdi zmdi-lock-outline"></i></label>
-              <input type="text" name="password" id="password" ngModel placeholder="Password..."/>
+              <input type="text" name="password" id="password" required #pass="ngModel" minlength="5" ngModel placeholder="Password..."/>
+              <span *ngIf="!pass?.valid && (pass?.dirty||pass?.touched)"> Password Không hợp lệ </span>
           </div>
           <div class="form-group">
        </div>

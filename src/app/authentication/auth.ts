@@ -11,7 +11,7 @@ export const canActivateTeam: CanActivateFn = (
     // console.log(token);
     if (token) {
         const jwtHelper = new JwtHelperService();
-        if (!jwtHelper.isTokenExpired(token)) {
+        if (!jwtHelper.isTokenExpired(token)){
             return true;
         } else {
             return false;

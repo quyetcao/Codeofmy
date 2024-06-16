@@ -13,7 +13,7 @@ export class DuanApiService {
     return this.httpServiceDuan.get(this.url,{headers: {authorization:`Bearer ${token}`}});
   }
   getOne(id:any){
-    return this.httpServiceDuan.get(this.url+id);
+    return this.httpServiceDuan.get(this.url+'/id/'+id);
   }
   delete(id:any){
 return this.httpServiceDuan.delete(this.url+id);
